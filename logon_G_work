@@ -1,0 +1,52 @@
+#!/bin/sh
+tmux new-session -s G_work -n Latex -d
+tmux send-keys -t G_work 'cd /media/ligy/files/baiduCloud/working/LaTeX_scripts/kondo_ac_field' C-m
+3tmux send-keys -t G_work 'vim *.tex' C-m
+tmux split-window -h -t G_work
+#tmux send-keys -t G_work:1.2 'cd $G_work' C-m
+tmux send-keys -t G_work 'cd /media/ligy/files/baiduCloud/working/LaTeX_scripts/kondo_ac_field' C-m
+#tmux split-window -v -t G_work
+#tmux send-keys -t G_work 'cd $G_work' C-m
+
+tmux new-window -n 9133 -t G_work
+tmux send-keys -t G_work:2 'ssh -X ligy09@210.26.51.126 -p 9133' C-m
+#tmux split-window -h -t G_work:2
+##tmux send-keys -t G_work:2.2 'ssh -X ligy09@210.26.51.126 -p 9133  -t "tmux list-session; if [[ $? -eq  0 ]]; then tmux attach; else tmux;fi"' C-m
+#tmux send-keys -t G_work:2 'ssh -X ligy09@210.26.51.126 -p 9133' C-m
+#tmux send-keys -t G_work:2.2 'ls' C-m
+#tmux split-window -v -t G_work:2.2
+#tmux send-keys -t G_work:2.3 'ssh -X ligy09@210.26.51.126 -p 9133' C-m
+#tmux send-keys -t G_work:2.3 'ls' C-m
+
+tmux new-window -n 9134 -t G_work
+tmux send-keys -t G_work:3 'ssh -X ligy09@210.26.51.126 -p 9134' C-m
+#tmux send-keys -t G_work:3 'vim GT*/wo*/G*.sh' C-m
+#tmux split-window -h -t G_work:3
+#tmux send-keys -t G_work:2.2 'ssh -X ligy09@210.26.51.126 -p 9134  -t "tmux list-session; if [[ $? -eq  0 ]]; then tmux attach; else tmux;fi"' C-m
+#tmux send-keys -t G_work:3 'ssh -X ligy09@210.26.51.126 -p 9134' C-m
+#tmux send-keys -t G_work:3.2 'ls' C-m
+#tmux split-window -v -t G_work:3
+#tmux send-keys -t G_work:3.3 'ssh -X ligy09@210.26.51.126 -p 9134' C-m
+#tmux send-keys -t G_work:3.3 'ls' C-m
+#tmux send-keys -t G_work:3.3 'cd GT*/wo*/' C-m
+
+tmux new-window -n 9135 -t G_work
+tmux send-keys -t G_work:4 'ssh -X ligy09@210.26.51.126 -p 9135' C-m
+#tmux send-keys -t G_work:4 'vim Gf*/wo*/G*.sh' C-m
+#tmux split-window -h -t G_work:4
+#tmux send-keys -t G_work:2.2 'ssh -X ligy09@210.26.51.126 -p 9135  -t "tmux list-session; if [[ $? -eq  0 ]]; then tmux attach; else tmux;fi"' C-m
+#tmux send-keys -t G_work:4 'ssh -X ligy09@210.26.51.126 -p 9135' C-m
+#tmux send-keys -t G_work:4.2 'ls' C-m
+#tmux split-window -v -t G_work:4
+#tmux send-keys -t G_work:4.3 'ssh -X ligy09@210.26.51.126 -p 9135' C-m
+#tmux send-keys -t G_work:4.3 'ls' C-m
+
+tmux new-window -n bash -t G_work
+tmux send-keys -t G_work:5 'ls' C-m
+tmux split-window -h -t G_work:5
+tmux send-keys -t G_work:5.2 'ls' C-m
+tmux split-window -v -t G_work:5
+tmux send-keys -t G_work:5.3 'ls' C-m
+
+tmux attach -t G_work
+exit 0
