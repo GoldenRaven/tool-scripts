@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --partition=test
+#SBATCH --time=00:15:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --job-name="hello_test"
+#SBATCH --output=test.out
+
+# slurm job manager of LZU cluster
+module load mpi/openmpi-x86_64
+mpirun -np 8 ./hello
